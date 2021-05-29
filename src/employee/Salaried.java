@@ -1,6 +1,6 @@
 package employee;
 
-public class Salaried extends Employee{
+public class Salaried extends Employee implements ChoiceEmployee{
 	
 	private double salary;
 	//private ArrayList<Sale> sale = new ArrayList<Sale>();
@@ -17,11 +17,11 @@ public class Salaried extends Employee{
     public void setSalary(double salary) {
         this.salary = salary;
     }
- 
-    /*public String showEmployeeInfo() {
-        return "Nome: " + this.name + 
-        		"\nEndereco: " + this.adress +
-        		"\nNumero do cartao: " + this.id + 
-        		"\nMetodo de Pagamento: " + this.paymentMethod;
-    }*/
+
+	@Override
+	public Employee choiceEmployee() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

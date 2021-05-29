@@ -6,7 +6,7 @@
 <br>
 
 ### :woman_technologist: Objetivo:
-O objetivo do projeto é implementar melhorias em um sistema de **folha de pagamento** desenvolvido da [AB1](https://github.com/eireneof/projeto_de_software) mediante o refatoramento diante dos code smells (ou bad smells) detectados. 
+O objetivo do projeto é implementar melhorias em um sistema de **folha de pagamento** desenvolvido da [AB1](https://github.com/eireneof/projeto_de_software). 
 
 ### :confounded: Code Smells:
 
@@ -69,7 +69,6 @@ Sale(String date, double value, String item, int employeeId)
 
 
 * **Speculative Generality**
-<br>
 verificar se todos os gets e sets estão sendo utilizados
 <br>
 
@@ -114,7 +113,6 @@ case 10: //NÃO INICIADO
 **5) `itens.TimeCard`**
 
 * **Speculative Generality**
-<br>
 verificar se todos os gets e sets estão sendo utilizados
 
 **6) `historic.HistoricComands`**
@@ -341,7 +339,6 @@ public void changeMember() {
 <br>
 
 * **Speculative Generality**
-<br>
 verificar se todos os gets e sets estão sendo utilizados
 
 

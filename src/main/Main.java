@@ -20,6 +20,9 @@ public class Main {
         mainText.firstContact();
         mainText.showCommands();
         
+        Sindicate sindicate = new Sindicate();
+        Employee employee = new Employee();
+        
         do {
         	commandVerify = scanner.nextInt();
         	
@@ -27,8 +30,7 @@ public class Main {
         		comando.setCurrent(commandVerify);
         	
         	int option;
-        	Sindicate sindicate = new Sindicate();
-            Employee employee = new Employee();
+        	 
             
             switch(commandVerify) {
             	case 0:
@@ -65,7 +67,7 @@ public class Main {
                 		employee.employeeChange();
                 	else if(option == 2)
                 		sindicate.changeMember(); 
-                case 7:
+                case 7: //NÃO INICIADO
                 	System.out.println("Rodar folha de pagamento para hoje!");
                 	break;
                 case 8: //INCONPLETO

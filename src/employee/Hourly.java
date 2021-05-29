@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import itens.TimeCard;
 
-public class Hourly extends Employee {
+public class Hourly extends Employee implements ChoiceEmployee{
 	
 	private double hourSalary;
 
@@ -29,11 +29,6 @@ public class Hourly extends Employee {
     	return count;
     }
     
-//    public void showHourlyTimeCard() {
-//    	for(TimeCard timecards : timeCards) {
-//    		 System.out.println("Data: " + timecards.getDate());
-//    	}
-//    }
     
     public void postTimeCard() {
     	Scanner in = new Scanner(System.in);
@@ -52,17 +47,8 @@ public class Hourly extends Employee {
     	TimeCard timeCard = new TimeCard(inner, out, date);
     	timeCards.add(timeCard); 
     	
-    	//System.out.println(timeCard.ge);
-    	
-    	//in.close();
     }
     
-    /*public String showEmployee() {
-    	return "Nome do empregado: " + this.name + 
-    			"\nEndereco: " + this.adress +
-    			"\nID: " + this.id + 
-    			"\nMétodo de Pagamento: " + this.paymentMethod;
-    }*/
 
 	public double getHourSalary() {
 		return hourSalary;
@@ -70,5 +56,11 @@ public class Hourly extends Employee {
 
 	public void setHourSalary(double hourSalary) {
 		this.hourSalary = hourSalary;
+	}
+
+	@Override
+	public Employee choiceEmployee() {
+		// TODO Auto-generated method stub
+		return this;
 	}
 }

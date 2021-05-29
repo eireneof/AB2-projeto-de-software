@@ -1,6 +1,7 @@
 package employee;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
@@ -39,9 +40,7 @@ public class Employee {
     
     public void setPaymentMethod(String paymentMethod) {
     	this.paymentMethod = paymentMethod;
-    }
-    
-    
+    }    
     
     public Employee(){
     	
@@ -100,26 +99,12 @@ public class Employee {
         System.out.println("Opções: assalariado, horista ou comissionado.");
         String type = in.nextLine();
         
-        double salary;
-             
-        if(type.equals("assalariado")) {
-        	System.out.println("Informe o salário:");
-        	salary = in.nextDouble();
-        	Salaried salaried =  new Salaried(name, adress, id, paymentMethod, salary, sindicate);
-        	listEmployees.add(salaried);
-        } else if (type.equals("horista")) {
-        	System.out.println("Informe o salário horário:");
-        	salary = in.nextDouble();
-        	Hourly hourly = new Hourly(name, adress, id, paymentMethod, salary, sindicate);
-        	listEmployees.add(hourly);
-        } else {
-        	System.out.println("Informe a porcentagem de comissão:");
-        	double percent = in.nextDouble();
-        	System.out.println("Informe o salário:");
-        	salary = in.nextDouble();
-        	Comissioned comissioned = new Comissioned(name, adress, id, paymentMethod, salary, percent, sindicate);
-        	listEmployees.add(comissioned);
-        } 
+        HashMap<String, Integer> employeeMap = new HashMap();
+        employeeMap.put("horista", 0);
+        employeeMap.put("assalariado", 1);
+        employeeMap.put("comissionado", 2);
+        
+        listEmployees.add(StrategyEmployees.values()[employeeMap.get(type)].getChoiceEmployee(name,adress,id,sindicate,paymentMethod).choiceEmployee());             
         
         System.out.println("O empregado fará parte do sindicato?");
         System.out.println(" 1 - sim");
@@ -277,8 +262,6 @@ public class Employee {
         		}
         		break;
         		
-        
-        //public Salaried(String name, String adress, int id, String paymentMethod, double salary, int sindicate)
         }
     }
 }
