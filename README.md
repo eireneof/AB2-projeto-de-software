@@ -35,7 +35,7 @@ Long Parameter List |
 
  <br>
 
- Os code smelss identificados podem ser vistos [aqui]() 
+ Os code smelss identificados podem ser vistos [aqui](https://github.com/eireneof/AB2-projeto-de-software/blob/main/code_smells.md) 
 
  ### :wrench: Refatoramento:
 
