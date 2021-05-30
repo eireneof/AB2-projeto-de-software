@@ -71,7 +71,7 @@ Long Parameter List |
     * A fim de resolver os problemas mencionados, foi aplicada uma estratégia primeiramente criando um `map`: `employeeMap.put("tipo de empregado", posição);`. Depois, foi criada uma `enum`chamada `StrategyEmployee`com os métodos referentes a criação de cada tipo de employee e acessada de acordo com a posição no map. Para dar suporte a essa estratégia, também foi criada uma classe abstrata `ChoiceEmployee` e os métodos de `StrategyEmployees` eram desse tipo. 
     * [StrategyEmployee](https://github.com/eireneof/AB2-projeto-de-software/blob/main/src/employee/StrategyEmployees.java)
     * [ChoiceEmployee](https://github.com/eireneof/AB2-projeto-de-software/blob/main/src/employee/ChoiceEmployee.java)
-    * *DEPOIS:* <br>
+    * *[DEPOIS:](https://github.com/eireneof/AB2-projeto-de-software/blob/main/src/employee/Employee.java#L97)* <br>
     ```java
     HashMap<String, Integer> employeeMap = new HashMap();
         employeeMap.put("horista", 0);
@@ -105,8 +105,26 @@ Long Parameter List |
         this.id = id;
     }
     ```
-     * *DEPOIS:* <br>
+     * *[DEPOIS:](https://github.com/eireneof/AB2-projeto-de-software/blob/main/src/employee/Employee.java#L45)* <br>
+     ```java
+    public Employee(){}
 
+    public Employee(String name, String adress, int id, String paymentMethod, int sindicate) {
+        this.name = name;
+        this.adress = adress;
+        this.id = id;
+        this.paymentMethod = paymentMethod;
+        this.sindicate = sindicate;
+    }
+    
+    public Employee(String name, String adress, int id) {
+        this(name, adress, id, null, -1);
+    }
+    //como *public Employee(){}* já retorna null por padrão, achei válido não aplicar o padrão
+     ```
+* **Move Accumulation to Colecting Parameter**
+    * Em andamento
+ 
 * **Long Parameter List**
     * Algumas variáveis que não precisavam ser criadas foram excluídas.
     * Em `Employee`isso aconteceu na função `idGenerate()`
