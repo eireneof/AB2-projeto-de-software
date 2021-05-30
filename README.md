@@ -69,8 +69,8 @@ Long Parameter List |
     //long parameter list: as variáveis salaried, hourly e comissioned  não precisavam ser criadas, visto que o construtor poderia ser passado diretamente em listEmployees.add();
     ```
     * A fim de resolver os problemas mencionados, foi aplicada uma estratégia primeiramente criando um `map`: `employeeMap.put("tipo de empregado", posição);`. Depois, foi criada uma `enum`chamada `StrategyEmployee`com os métodos referentes a criação de cada tipo de employee e acessada de acordo com a posição no map. Para dar suporte a essa estratégia, também foi criada uma classe abstrata `ChoiceEmployee` e os métodos de `StrategyEmployees` eram desse tipo. 
-    * [StrategyEmployee]()
-    * [ChoiceEmployee]()
+    * [StrategyEmployee](https://github.com/eireneof/AB2-projeto-de-software/blob/main/src/employee/StrategyEmployees.java)
+    * [ChoiceEmployee](https://github.com/eireneof/AB2-projeto-de-software/blob/main/src/employee/ChoiceEmployee.java)
     * *DEPOIS:* <br>
     ```java
     HashMap<String, Integer> employeeMap = new HashMap();
