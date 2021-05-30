@@ -22,7 +22,7 @@ public Employee(String name, String adress, int id, String paymentMethod, int si
 
 public Employee(String name, String adress, int id) {...}
 
-//A classe cumpre uma função que não é dela, no caso a de postagem de vendas
+//A classe possui três construtores complementares
 ```
 
 * **Long Parameter List e Long Method**
