@@ -36,8 +36,8 @@ public class Sindicate {
     }
 	
 	public String showSindicateMember(Sindicate member) {
-		return "Nome do Membro: " + member.name +
-				"\n ID do Membro: " + member.sindicateId;
+		return "Nome do Membro: " + member.getName() +
+				"\n ID do Membro: " + member.getSindicateId();
 	}
 	
 	public void addSindicateMember(String name, int employeeId) { 

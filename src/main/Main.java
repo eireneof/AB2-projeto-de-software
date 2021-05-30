@@ -60,6 +60,7 @@ public class Main {
                 		employee.employeeChange();
                 	else if(option == 2)
                 		sindicate.changeMember(); 
+                	break;
                 case 7: //NÃO INICIADO
                 	System.out.println("Rodar folha de pagamento para hoje!");
                 	break;

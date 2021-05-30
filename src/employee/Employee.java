@@ -103,6 +103,8 @@ public class Employee {
         System.out.println(" 0 - não");
         int sindicate = in.nextInt();
         
+        //System.out.println("O type é esse::::::: " + employeeMap.get(type));
+        
         listEmployees.add(StrategyEmployees.values()[employeeMap.get(type)].getChoiceEmployee(name,adress,id,sindicate,paymentMethod).choiceEmployee());             
                   
         if(sindicate == 1) {
