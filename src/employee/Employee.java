@@ -104,12 +104,13 @@ public class Employee {
         employeeMap.put("assalariado", 1);
         employeeMap.put("comissionado", 2);
         
-        listEmployees.add(StrategyEmployees.values()[employeeMap.get(type)].getChoiceEmployee(name,adress,id,sindicate,paymentMethod).choiceEmployee());             
-        
         System.out.println("O empregado fará parte do sindicato?");
         System.out.println(" 1 - sim");
         System.out.println(" 0 - não");
         int sindicate = in.nextInt();
+        
+        listEmployees.add(StrategyEmployees.values()[employeeMap.get(type)].getChoiceEmployee(name,adress,id,sindicate,paymentMethod).choiceEmployee());             
+           
        
         if(sindicate == 1) {
         	Sindicate sindicateMember = new Sindicate();
@@ -130,9 +131,7 @@ public class Employee {
     	
     	Employee nullEmployee = null;
     	for(Employee employee : listEmployees){
-    		//System.out.println("Passei por: " + employee.getName());
             if(employee.getId() == id){
-            	//System.out.println("Quem será removido: " + employee.getName());
             	nullEmployee = employee;
             }
         }
@@ -156,7 +155,6 @@ public class Employee {
         for(Employee employee : listEmployees){
             if(employee.getId() == id){
                 if(employee.getClass() == Hourly.class){
-                	//System.out.println("entrei aqui");
                     ((Hourly)employee).postTimeCard();
                 }
             }
