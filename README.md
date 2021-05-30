@@ -35,7 +35,7 @@ Long Parameter List |
 
  <br>
 
- Os code smelss identificados podem ser vistos [aqui](https://github.com/eireneof/AB2-projeto-de-software/blob/main/code_smells.md) 
+ Os code smells identificados podem ser vistos [aqui](https://github.com/eireneof/AB2-projeto-de-software/blob/main/code_smells.md) 
 
  ### :wrench: Refatoramento:
 
@@ -126,7 +126,7 @@ Long Parameter List |
 * **Long Parameter List (code smell)**
     * Algumas variáveis que não precisavam ser criadas foram excluídas.
     * Em `Employee`isso aconteceu na função `idGenerate()`
-    * [Antes](https://github.com/eireneof/projeto_de_software/blob/main/src/employee/Employee.java#L67) X [Depois]() <br>
+    * [Antes](https://github.com/eireneof/projeto_de_software/blob/main/src/employee/Employee.java#L67) X [Depois](https://github.com/eireneof/AB2-projeto-de-software/blob/main/src/employee/Employee.java#L61) <br>
 
 
     ```java
@@ -150,7 +150,7 @@ Long Parameter List |
     ```
     * Em `Sindicate`isso também aconteceu e foi modificado pelo mesmo motivo de criar uma variável size ao invés de utilizar o retorno da função `.size()`.
      * Continuando em `Sindicate`, outras duas variáveis foram excluídas.
-     * [Antes](https://github.com/eireneof/projeto_de_software/blob/main/src/employee/Sindicate.java#L48) X [Depois]() <br>
+     * [Antes](https://github.com/eireneof/projeto_de_software/blob/main/src/employee/Sindicate.java#L48) X [Depois](https://github.com/eireneof/AB2-projeto-de-software/blob/main/src/employee/Sindicate.java#L43) <br>
 
     ```java
     //antes
@@ -174,7 +174,7 @@ Long Parameter List |
 * **Outros code smells resolvidos** 
     * Para outros code smells presentes no relatório não consegui achar um padrão de projeto em que eles se encaixassem, mas foram mudanças bem simples.
     * Algumas funções inutilizadas de `get()` e `set()`foram deletadas.
-    * Além disso, a classe `Text`se encaixava em `Speculative Generality`e foi melhorada para cumprir seu papel de maneira eficiente e não apenas especular sobre ele. Por isso, foram adicionados novos métodos como: `changeEmployee()`, `undoRedo()` e `newCicleOrExit()`. 
+    * Além disso, a classe `Text`se encaixava em *Speculative Generality* e foi melhorada para cumprir seu papel de maneira eficiente e não apenas especular sobre ele. Por isso, foram adicionados novos métodos como: `changeEmployee()`, `undoRedo()` e `newCicleOrExit()`. 
     * Os packages também estavam mal organizados e alguns só possuiam apenas uma classe. Para resolver isso, as classes "filhas únicas" foram agrupadas em um package chamado `utils`.
 
 <br>
