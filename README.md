@@ -41,7 +41,7 @@ Long Parameter List |
 
  * **Strategy**
     * Quando um novo empregado é adicionado, ele pode ser de 3 tipos, horista, assalariado ou comissionado. Para isso foi criado um método `add()`na classe principal `Employee` e um relacionamento hierárquico entre as subclasses `Hourly`, `Comissioned`e `Assalaried`.
-    * Pôde ser observado 3 tipos de code smells ao fazer o encaminhamento adequado para a criação dos objetos. <br>
+    * Pôde ser observado 3 tipos de code smells ao fazer o encaminhamento adequado para a criação dos objetos. É interessante observar que a implementação desse padrão de projeto lidou com esses 3 problemas do sistema anterior. <br>
     * *[ANTES:](https://github.com/eireneof/projeto_de_software/blob/main/src/employee/Employee.java#L105)* <br> 
     
     ```java
