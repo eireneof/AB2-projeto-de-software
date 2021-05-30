@@ -40,15 +40,12 @@ public class Sindicate {
 	
 	public String showSindicateMember(Sindicate member) {
 		return "Nome do Membro: " + member.name +
-				"\n ID do Menbro: " + member.sindicateId;
+				"\n ID do Membro: " + member.sindicateId;
 	}
 	
 	public void addSindicateMember(String name, int employeeId) { 
-		//Random randInt = new Random();
-		int id = idGenerate();
-		Sindicate member = new Sindicate(name, employeeId, id, 0, 0);
-		listSindicate.add(member);
-		System.out.println(listSindicate.get(listSindicate.size() - 1).showSindicateMember(member));
+		listSindicate.add(new Sindicate(name, employeeId, idGenerate(), 0, 0));
+		System.out.println(listSindicate.get(listSindicate.size() - 1).showSindicateMember(listSindicate.get(listSindicate.size() - 1)));
 		System.out.println("Adição no sindicato realizada com sucesso!");
 	}
 	

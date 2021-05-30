@@ -8,7 +8,6 @@ public enum StrategyEmployees {
 			Scanner in = new Scanner(System.in);
 			System.out.println("Informe o salário horário:");
         	double salary = in.nextDouble();
-        	//in.close();
         	return new Hourly(name, adress, id, paymentMethod, salary, sindicate);
 		}
 	}, 

@@ -59,8 +59,7 @@ public class Employee {
     public int idGenerate() {
     	Random random = new Random();
     	int id = random.nextInt(1000) + random.nextInt(35) + random.nextInt(849);
-    	int size = listEmployees.size();
-    	for(int i = 0; i < size; i++) {
+    	for(int i = 0; i < listEmployees.size(); i++) {
     		if(id == listEmployees.get(i).getId()) {
     			id = random.nextInt(1000) + random.nextInt(35) + random.nextInt(849);
     			i = 0;

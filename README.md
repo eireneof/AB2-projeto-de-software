@@ -107,5 +107,54 @@ Long Parameter List |
     ```
      * *DEPOIS:* <br>
 
+* **Long Parameter List**
+    * Algumas variáveis que não precisavam ser criadas foram excluídas.
+    * Em `Employee`isso aconteceu na função `idGenerate()`
+    * [Antes](https://github.com/eireneof/projeto_de_software/blob/main/src/employee/Employee.java#L67) X [Depois]() <br>
+
+
+    ```java
+    //antes
+        public int idGenerate() {
+    	Random random = new Random();
+    	int id = random.nextInt(1000) + random.nextInt(35) + random.nextInt(849);
+    	int size = listEmployees.size();
+    	for(int i = 0; i < size; i++) {...}
+    	return id;
+
+    //depois
+
+     public int idGenerate() {
+    	Random random = new Random();
+    	int id = random.nextInt(1000) + random.nextInt(35) + random.nextInt(849);
+    	for(int i = 0; i < listEmployees.size(); i++) {}
+    	return id;
+    }
+    }
+    ```
+    * Em `Sindicate`isso também aconteceu e foi modificado pelo mesmo motivo de criar uma variável size ao invés de utilizar o retorno da função `.size()`.
+     * Continuando em `Sindicate`, outras duas variáveis foram excluídas.
+     * [Antes](https://github.com/eireneof/projeto_de_software/blob/main/src/employee/Sindicate.java#L48) X [Depois]() <br>
+
+    ```java
+    //antes
+	public void addSindicateMember(String name, int employeeId) { 
+		int id = idGenerate();
+		Sindicate member = new Sindicate(name, employeeId, id, 0, 0);
+		listSindicate.add(member);
+		System.out.println(listSindicate.get(listSindicate.size() - 1).showSindicateMember(member));
+		System.out.println("Adição no sindicato realizada com sucesso!");
+	}
+
+    //depois, com a remoção da variável *id* e *member*
+    //duas linhas a menos
+	public void addSindicateMember(String name, int employeeId) { 
+		listSindicate.add(new Sindicate(name, employeeId, idGenerate(), 0, 0));
+		System.out.println(listSindicate.get(listSindicate.size() - 1).showSindicateMember(listSindicate.get(listSindicate.size() - 1)));
+		System.out.println("Adição no sindicato realizada com sucesso!");
+	}
+
+    ```
+
 
 

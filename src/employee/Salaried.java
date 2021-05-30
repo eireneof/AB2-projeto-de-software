@@ -3,7 +3,6 @@ package employee;
 public class Salaried extends Employee implements ChoiceEmployee{
 	
 	private double salary;
-	//private ArrayList<Sale> sale = new ArrayList<Sale>();
 	
 	public Salaried(String name, String adress, int id, String paymentMethod, double salary, int sindicate) {
         super(name, adress, id, paymentMethod, sindicate);
@@ -21,7 +20,7 @@ public class Salaried extends Employee implements ChoiceEmployee{
 	@Override
 	public Employee choiceEmployee() {
 		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
 
 }
