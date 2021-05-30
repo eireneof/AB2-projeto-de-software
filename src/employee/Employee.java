@@ -42,9 +42,7 @@ public class Employee {
     	this.paymentMethod = paymentMethod;
     }    
     
-    public Employee(){
-    	
-    }
+    public Employee(){}
 
     public Employee(String name, String adress, int id, String paymentMethod, int sindicate) {
         this.name = name;
@@ -55,9 +53,7 @@ public class Employee {
     }
     
     public Employee(String name, String adress, int id) {
-        this.name = name;
-        this.adress = adress;
-        this.id = id;
+        this(name, adress, id, null, -1);
     }
 
     public int idGenerate() {
