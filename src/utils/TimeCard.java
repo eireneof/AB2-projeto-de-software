@@ -1,4 +1,4 @@
-package itens;
+package utils;
 
 public class TimeCard {
   private double in;

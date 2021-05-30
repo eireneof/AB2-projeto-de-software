@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import java.util.Scanner;
 
-import itens.TimeCard;
+import utils.TimeCard;
 
 public class Hourly extends Employee implements ChoiceEmployee{
 	

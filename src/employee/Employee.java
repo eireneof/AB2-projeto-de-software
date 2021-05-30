@@ -15,8 +15,7 @@ public class Employee {
     private String paymentMethod;
     private static ArrayList<Employee> listEmployees = new ArrayList<Employee>();
     private int sindicate;
-
-    
+  
     public String getAdress(){
         return adress;
     }
@@ -108,7 +107,7 @@ public class Employee {
                   
         if(sindicate == 1) {
         	Sindicate sindicateMember = new Sindicate();
-        	sindicateMember.addSindicateMember(listEmployees.get(listEmployees.size() - 1);
+        	sindicateMember.addSindicateMember(name, id);
         }
         
         System.out.println(listEmployees.get(listEmployees.size() - 1).showEmployeeInfo(listEmployees.get(listEmployees.size() - 1)));

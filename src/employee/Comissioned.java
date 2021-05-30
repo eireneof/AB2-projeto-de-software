@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import java.util.Scanner;
 
-import sells.Sale;
+import utils.Sale;
 
 public class Comissioned extends Salaried implements ChoiceEmployee{
 	
@@ -46,7 +46,6 @@ public class Comissioned extends Salaried implements ChoiceEmployee{
          
          System.out.println("Produto adicionado!");
          System.out.println(salesList.get(salesList.size() - 1).showSale(salesList.get(salesList.size() - 1)));
-
      }
 
 	public double getAcumulatedComission() {

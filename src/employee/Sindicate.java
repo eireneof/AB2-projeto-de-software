@@ -20,10 +20,7 @@ public class Sindicate {
 		this.setSindicateId(sindicateId);
 	}
 	
-	public Sindicate() {
-		//return null;
-	}
-	
+	public Sindicate() {}	
 	
     public int idGenerate() {
     	Random random = new Random();
@@ -122,9 +119,7 @@ public class Sindicate {
     			break;
     	}
 
-    }
-    	
-    
+    }  
 
 	public int getSindicateId() {
 		return sindicateId;

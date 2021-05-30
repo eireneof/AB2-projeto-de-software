@@ -2,9 +2,7 @@ package main;
 
 public class Text {
 
-	public Text() {
-		
-	}
+	public Text() {}
 	
 	public void showCommands() {
         System.out.println("1 - Adição de Empregado");
@@ -28,6 +26,24 @@ public class Text {
 	
 	public void outText() {
 		System.out.println("Você saiu do sistema. Até breve!");
+	}
+	
+	public void changeEmployee() {
+    	System.out.println("Alterar detalhes de um empregado!");
+    	System.out.println("Esses dados são referentes a:");
+    	System.out.println("1 - Informações do empregado na EMPRESA");
+    	System.out.println("2 - Informações do empregado na SINDICATO");
+	}
+	
+	public void undoRedo() {
+    	System.out.println("Undo/Redo!");
+    	System.out.println("Informe o que deseja fazer: ");
+    	System.out.println("1 - Undo");
+    	System.out.println("2 - Redo");
+	}
+	
+	public void newCicleOrExit() {
+        System.out.println("Informe um novo comando, digite 11 para sair ou 0 para mostrar a lista de comandos.");
 	}
 
 }

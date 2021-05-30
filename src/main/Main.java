@@ -1,14 +1,10 @@
 package main;
 
 import java.util.Scanner;
-import java.util.Random;
-import java.util.Stack;
-import java.util.List;
-import java.util.ArrayList;
+
 import employee.Employee;
 import employee.Sindicate;
-import historic.HistoricComands;
-import main.Text;
+import utils.HistoricComands;
 
 public class Main {
     public static void main(String[] args){
@@ -58,10 +54,7 @@ public class Main {
                 	employee.postSale();
                 	break;
                 case 6: 
-                	System.out.println("Alterar detalhes de um empregado!");
-                	System.out.println("Esses dados são referentes a:");
-                	System.out.println("1 - Informações do empregado na EMPRESA");
-                	System.out.println("2 - Informações do empregado na SINDICATO");
+                	mainText.changeEmployee();
                 	 option = scanner.nextInt();
                 	if(option == 1)
                 		employee.employeeChange();
@@ -71,10 +64,7 @@ public class Main {
                 	System.out.println("Rodar folha de pagamento para hoje!");
                 	break;
                 case 8: //INCONPLETO
-                	System.out.println("Undo/Redo!");
-                	System.out.println("Informe o que deseja fazer: ");
-                	System.out.println("1 - Undo");
-                	System.out.println("2 - Redo");
+                	mainText.undoRedo();
                 	option = scanner.nextInt();
                 	int undoRedo;
                 	if(option == 1) {
@@ -92,8 +82,7 @@ public class Main {
                 	System.out.println("10 - Criação de novas agendas de pagamento");
                 	break;
             }
-            
-            System.out.println("Informe um novo comando, digite 11 para sair ou 0 para mostrar a lista de comandos.");
+            mainText.newCicleOrExit();
         } while(commandVerify != 11);
         scanner.close();
     }

@@ -1,12 +1,10 @@
-package sells;
+package utils;
 
 public class Sale {
 	private String date;
 	private double value;
 	private String item;
-	private int employeeId;
-	//public int id;
-	
+	private int employeeId;	
 
 	public Sale(String date, double value, String item, int employeeId) {
 		this.setDate(date);
