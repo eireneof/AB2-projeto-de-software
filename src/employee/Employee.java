@@ -105,11 +105,10 @@ public class Employee {
         int sindicate = in.nextInt();
         
         listEmployees.add(StrategyEmployees.values()[employeeMap.get(type)].getChoiceEmployee(name,adress,id,sindicate,paymentMethod).choiceEmployee());             
-           
-       
+                  
         if(sindicate == 1) {
         	Sindicate sindicateMember = new Sindicate();
-        	sindicateMember.addSindicateMember(name, id);
+        	sindicateMember.addSindicateMember(listEmployees.get(listEmployees.size() - 1);
         }
         
         System.out.println(listEmployees.get(listEmployees.size() - 1).showEmployeeInfo(listEmployees.get(listEmployees.size() - 1)));
