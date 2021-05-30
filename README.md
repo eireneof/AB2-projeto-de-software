@@ -39,3 +39,51 @@ Long Parameter List |
 
  ### :wrench: Refatoramento:
 
+ * **Strategy**
+    * Quando um novo empregado é adicionado, ele pode ser de 3 tipos, horista, assalariado ou comissionado. Para isso foi criado um método `add()`na classe principal `Employee` e um relacionamento hierárquico entre as subclasses `Hourly`, `Comissioned`e `Assalaried`.
+    * Pôde ser observado 3 tipos de code smells ao fazer o encaminhamento adequado para a criação dos objetos. <br>
+    * *[ANTES:](https://github.com/eireneof/projeto_de_software/blob/main/src/employee/Employee.java#L105)* <br> 
+    
+    ```java
+    if(type.equals("assalariado")) {
+        	System.out.println("Informe o salário:");
+        	salary = in.nextDouble();
+        	Salaried salaried =  new Salaried(name, adress, id, paymentMethod, salary, sindicate);
+        	listEmployees.add(salaried);
+        } else if (type.equals("horista")) {
+        	System.out.println("Informe o salário horário:");
+        	salary = in.nextDouble();
+        	Hourly hourly = new Hourly(name, adress, id, paymentMethod, salary, sindicate);
+        	listEmployees.add(hourly);
+        } else {
+        	System.out.println("Informe a porcentagem de comissão:");
+        	double percent = in.nextDouble();
+        	System.out.println("Informe o salário:");
+        	salary = in.nextDouble();
+        	Comissioned comissioned = new Comissioned(name, adress, id, paymentMethod, salary, percent, sindicate);
+        	listEmployees.add(comissioned);
+        } 
+
+    //log method: uso complexo de condicionais
+    //exposição indevida: declaração das subclasses ao invés da principal (ex: Hourly hourly = new Hourly(name, adress, id, paymentMethod, salary, sindicate);)
+    //long parameter list: as variáveis salaried, hourly e comissioned  não precisavam ser criadas, visto que o construtor poderia ser passado diretamente em listEmployees.add();
+    ```
+    * A fim de resolver os problemas mencionados, foi aplicada uma estratégia primeiramente criando um `map`: `employeeMap.put("tipo de empregado", posição);`. Depois, foi criada uma `enum`chamada `StrategyEmployee`com os métodos referentes a criação de cada tipo de employee e acessada de acordo com a posição no map. Para dar suporte a essa estratégia, também foi criada uma classe abstrata `ChoiceEmployee` e os métodos de `StrategyEmployees` eram desse tipo. 
+    * [StrategyEmployee]()
+    * [ChoiceEmployee]()
+    * *DEPOIS:* <br>
+    ```java
+    HashMap<String, Integer> employeeMap = new HashMap();
+        employeeMap.put("horista", 0);
+        employeeMap.put("assalariado", 1);
+        employeeMap.put("comissionado", 2);
+    
+    listEmployees.add(StrategyEmployees.values()[employeeMap.get(type)].getChoiceEmployee(name,adress,id,sindicate,paymentMethod).choiceEmployee());
+
+    //As condicionais anteriores foram substituídas por essas linhas de código na função add
+    ```
+    
+
+
+
+
