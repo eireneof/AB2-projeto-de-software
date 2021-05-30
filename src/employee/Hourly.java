@@ -22,14 +22,10 @@ public class Hourly extends Employee implements ChoiceEmployee{
     	for(TimeCard j : timeCards ) {
     		System.out.println("Data:" + j.getDate() + "\n Horas trabalhadas:" + j.getWorkedHours() + "\n \n");
     		count += j.getWorkedHours();
-    	}
-    	
-    	//System.out.println("Total de horas trabalahar por " + this.name + "( " + this.id + " ) foi de: " + count + " horas");
-    	
+    	}    	
     	return count;
     }
-    
-    
+      
     public void postTimeCard() {
     	Scanner in = new Scanner(System.in);
     	System.out.println("Obs: siga o seguinte formato para datas dia/ mês/ ano");
@@ -49,7 +45,6 @@ public class Hourly extends Employee implements ChoiceEmployee{
     	
     }
     
-
 	public double getHourSalary() {
 		return hourSalary;
 	}
